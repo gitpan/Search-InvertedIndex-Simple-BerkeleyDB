@@ -1,0 +1,20 @@
+--- #YAML:1.0
+name: Search-InvertedIndex-Simple-BerkeleyDB
+version: 1.00
+author:
+  - Ron Savage <ron@savage.net.au>
+abstract: |-
+  Build indexes for a set of search keys; Search using BerkeleyDB
+license: artistic
+requires:
+  BerkeleyDB: 0.26
+  Search::InvertedIndex::Simple: 1
+  Set::Array: 0.12
+build_requires:
+  Test::More: 0
+  Test::Pod: 0
+provides:
+  Search::InvertedIndex::Simple::BerkeleyDB:
+    file: lib/Search/InvertedIndex/Simple/BerkeleyDB.pm
+    version: 1.00
+generated_by: Module::Build version 0.2607
