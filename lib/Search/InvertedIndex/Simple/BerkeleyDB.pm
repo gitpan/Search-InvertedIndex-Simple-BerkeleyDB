@@ -56,7 +56,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 # -----------------------------------------------
 
@@ -65,10 +65,10 @@ our $VERSION = '1.00';
 {
 	my(%_attr_data) =
 	(	# Alphabetical order.
-		_dataset	=> [],
-		_keyset		=> [],
-		_lower_case	=> 0,
-		_separator	=> ',',
+		_dataset    => [],
+		_keyset     => [],
+		_lower_case => 0,
+		_separator  => ',',
 	);
 
 	sub _default_for
@@ -100,7 +100,7 @@ sub db_get
 		$$self{'_dbh'}{$_} -> db_get($$key{$_}, $value{$_});
 	}
 
-	\%value;
+	return \%value;
 
 }	# End of db_get.
 
@@ -114,9 +114,9 @@ sub db_print
 
 	for $key (sort keys %{$$self{'_dbh'} })
 	{
-		my($count)		= 0;
-		my($cursor)		= $$self{'_dbh'}{$key} -> db_cursor();
-		my($k, $v)		= ('', '');
+		my($count)  = 0;
+		my($cursor) = $$self{'_dbh'}{$key} -> db_cursor();
+		my($k, $v)  = ('', '');
 
 		push @log, $key;
 
@@ -128,7 +128,7 @@ sub db_print
 		}
 	}
 
-	\@log;
+	return \@log;
 
 }	# End of db_print.
 
@@ -136,8 +136,8 @@ sub db_print
 
 sub db_put
 {
-	my($self)	= @_;
-	my($env)	= BerkeleyDB::Env -> new
+	my($self) = @_;
+	my($env)  = BerkeleyDB::Env -> new
 	(
 		Flags => DB_PRIVATE, # Use RAM rather than disk files for the database.
 	);
@@ -189,11 +189,11 @@ sub inflate
 		}
 		else
 		{
-			$set -> intersection(Set::Array -> new(split(/$$self{'_separator'}/, $$value{$_}) ) );
+			$set = Set::Array -> new(join(',', $set -> intersection(Set::Array -> new(split(/$$self{'_separator'}/, $$value{$_}) ) ) ) );
 		}
 	}
 
-	$set;
+	return $set;
 
 }	# End of inflate.
 
@@ -201,10 +201,8 @@ sub inflate
 
 sub new
 {
-	my($caller, %arg)	= @_;
-	my($caller_is_obj)	= ref($caller);
-	my($class)			= $caller_is_obj || $caller;
-	my($self)			= bless({}, $class);
+	my($class, %arg) = @_;
+	my($self)        = bless({}, $class);
 
 	for my $attr_name ($self -> _standard_keys() )
 	{
@@ -213,10 +211,6 @@ sub new
 		if (exists($arg{$arg_name}) )
 		{
 			$$self{$attr_name} = $arg{$arg_name};
-		}
-		elsif ($caller_is_obj)
-		{
-			$$self{$attr_name} = $$caller{$attr_name};
 		}
 		else
 		{
@@ -227,10 +221,10 @@ sub new
 	# There will be 1 database handle per entry in @{$$self{'_keyset'} }.
 	# Also, convert keyset into a hash for ease of testing existances.
 
-	$$self{'_dbh'}								= {};
-	@{$$self{'_key'} }{@{$$self{'_keyset'} } }	= (1) x @{$$self{'_keyset'} };
+	$$self{'_dbh'}                             = {};
+	@{$$self{'_key'} }{@{$$self{'_keyset'} } } = (1) x @{$$self{'_keyset'} };
 
-	$self;
+	return $self;
 
 }	# End of new.
 
