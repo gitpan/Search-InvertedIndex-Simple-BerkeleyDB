@@ -1,9 +1,0 @@
-Revision history for Perl extension Search::InvertedIndex::Simple::BerkeleyDB.
-
-1.01  Mon Dec  1 13:14:00 2008
-	  - Convert all files to Unix format
-	  - Fix bug in inflate() to return the result of the intersection rather than always return the
-	  	first Set::Array created
-
-1.00  Fri Feb 25 13:37:29 2005
-	- original version

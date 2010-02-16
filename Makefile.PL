@@ -7,28 +7,28 @@ WriteMakefile
 (
 	($] ge '5.005') ?
 	(
-		'AUTHOR' => 'Ron Savage (ron@savage.net.au)',
-		'ABSTRACT' => 'Build indexes for a set of search keys; Search using BerkeleyDB',
+	 'AUTHOR'   => 'Ron Savage (ron@savage.net.au)',
+	 'ABSTRACT' => 'Build indexes for a set of search keys; Search using BerkeleyDB',
     ) : (),
-	clean			=>
+	clean =>
 	{
-		FILES		=> 'blib/* Makefile MANIFEST Search-InvertedIndex-Simple-BerkeleyDB*'
+	 FILES => 'blib/* Makefile MANIFEST Search-InvertedIndex-Simple-BerkeleyDB*'
 	},
-	dist			=>
+	dist =>
 	{
-		COMPRESS	=> 'gzip',
-		SUFFIX		=> 'gz'
+	 COMPRESS => 'gzip',
+	 SUFFIX   => 'gz'
 	},
-	DISTNAME		=> 'Search-InvertedIndex-Simple-BerkeleyDB',
-	NAME			=> 'Search::InvertedIndex::Simple::BerkeleyDB',
-	PL_FILES		=> {},
-	PREREQ_PM		=>
+	DISTNAME  => 'Search-InvertedIndex-Simple-BerkeleyDB',
+	NAME      => 'Search::InvertedIndex::Simple::BerkeleyDB',
+	PL_FILES  => {},
+	PREREQ_PM =>
 	{
-		BerkeleyDB						=> 0.26,
-		Search::InvertedIndex::Simple	=> 1.00,
-		Set::Array						=> 0.12,
-		Test::More						=> 0,
-		Test::Pod						=> 0,
+	 BerkeleyDB                    => 0.41,
+	 Search::InvertedIndex::Simple => 1.00,
+	 Set::Array                    => 0.19,
+	 Test::More                    => 0.94,
+	 Test::Pod                     => 1.41,
 	},
-	VERSION_FROM	=> 'lib/Search/InvertedIndex/Simple/BerkeleyDB.pm',
+	VERSION_FROM => 'lib/Search/InvertedIndex/Simple/BerkeleyDB.pm',
 );

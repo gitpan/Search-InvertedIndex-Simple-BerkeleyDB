@@ -2,18 +2,19 @@ use Module::Build;
 
 Module::Build -> new
 (
-	module_name		=> 'Search::InvertedIndex::Simple::BerkeleyDB',
-	license			=> 'artistic',
-	dist_author		=> 'Ron Savage <ron@savage.net.au>',
-	build_requires	=>
+	module_name    => 'Search::InvertedIndex::Simple::BerkeleyDB',
+	license        => 'artistic',
+	dist_abstract  => 'Build indexes for a set of search keys; Search using BerkeleyDB',
+	dist_author    => 'Ron Savage <ron@savage.net.au>',
+	build_requires =>
 	{
-		Test::More	=> 0,
-		Test::Pod	=> 0,
+	 Test::More => 0.94,
+	 Test::Pod  => 1.41,
 	},
-	requires		=>
+	requires =>
 	{
-		BerkeleyDB						=> 0.26,
-		Search::InvertedIndex::Simple	=> 1.00,
-		Set::Array						=> 0.12,
+	 BerkeleyDB                    => 0.41,
+	 Search::InvertedIndex::Simple => 1.00,
+	 Set::Array                    => 0.19,
 	},
 ) -> create_build_script();

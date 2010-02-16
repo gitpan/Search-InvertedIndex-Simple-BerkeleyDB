@@ -1,0 +1,22 @@
+Revision history for Perl extension Search::InvertedIndex::Simple::BerkeleyDB.
+
+1.04  Tue Feb 16 14:15:00 2010
+	- Update version number of modules required in Build.PL and Makefile.PL,
+		to hopefully avoid the problem everyone's been getting (even Raduko):
+		'Non-zero wait status: 11'.
+
+1.03  Wed Feb 10 14:02:24 2010
+	- MANIFEST.SKIP updated to exclude MYMETA.yml. Add MYMETA.yml.
+
+1.02  Fri Nov 13 13:20:00 2009
+	- Run dos2unix
+	- Rename Changes.txt to CHANGES
+	- Update MANIFEST.
+
+1.01  Mon Dec  1 13:14:00 2008
+	  - Convert all files to Unix format
+	  - Fix bug in inflate() to return the result of the intersection rather than always return the
+	  	first Set::Array created
+
+1.00  Fri Feb 25 13:37:29 2005
+	- original version

@@ -1,24 +1,26 @@
 ---
-name: Search-InvertedIndex-Simple-BerkeleyDB
-version: 1.01
+abstract: 'Build indexes for a set of search keys; Search using BerkeleyDB'
 author:
   - 'Ron Savage <ron@savage.net.au>'
-abstract: Build indexes for a set of search keys; Search using BerkeleyDB
-license: artistic
-resources:
-  license: http://opensource.org/licenses/artistic-license.php
-requires:
-  BerkeleyDB: 0.26
-  Search::InvertedIndex::Simple: 1
-  Set::Array: 0.12
 build_requires:
-  Test::More: 0
-  Test::Pod: 0
+  Test::More: 0.94
+  Test::Pod: 1.41
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3603'
+license: artistic
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Search-InvertedIndex-Simple-BerkeleyDB
 provides:
   Search::InvertedIndex::Simple::BerkeleyDB:
     file: lib/Search/InvertedIndex/Simple/BerkeleyDB.pm
-    version: 1.01
-generated_by: Module::Build version 0.280801
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+    version: 1.04
+requires:
+  BerkeleyDB: 0.41
+  Search::InvertedIndex::Simple: 1
+  Set::Array: 0.19
+resources:
+  license: http://opensource.org/licenses/artistic-license.php
+version: 1.04
