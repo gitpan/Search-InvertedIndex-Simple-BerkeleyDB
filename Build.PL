@@ -14,7 +14,7 @@ Module::Build -> new
 	requires =>
 	{
 	 BerkeleyDB                    => 0.41,
-	 Search::InvertedIndex::Simple => 1.00,
+	 Search::InvertedIndex::Simple => 1.03,
 	 Set::Array                    => 0.19,
 	},
 ) -> create_build_script();

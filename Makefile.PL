@@ -25,7 +25,7 @@ WriteMakefile
 	PREREQ_PM =>
 	{
 	 BerkeleyDB                    => 0.41,
-	 Search::InvertedIndex::Simple => 1.00,
+	 Search::InvertedIndex::Simple => 1.03,
 	 Set::Array                    => 0.19,
 	 Test::More                    => 0.94,
 	 Test::Pod                     => 1.41,

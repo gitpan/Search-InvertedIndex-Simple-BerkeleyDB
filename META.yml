@@ -16,11 +16,11 @@ name: Search-InvertedIndex-Simple-BerkeleyDB
 provides:
   Search::InvertedIndex::Simple::BerkeleyDB:
     file: lib/Search/InvertedIndex/Simple/BerkeleyDB.pm
-    version: 1.04
+    version: 1.05
 requires:
   BerkeleyDB: 0.41
-  Search::InvertedIndex::Simple: 1
+  Search::InvertedIndex::Simple: 1.03
   Set::Array: 0.19
 resources:
   license: http://opensource.org/licenses/artistic-license.php
-version: 1.04
+version: 1.05

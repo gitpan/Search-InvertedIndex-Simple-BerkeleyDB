@@ -1,5 +1,12 @@
 Revision history for Perl extension Search::InvertedIndex::Simple::BerkeleyDB.
 
+1.05  Sun Feb 21 12:56:30 2010
+	- Remove text 'All rights reserved' (for Debian licensing).
+	- Remove POD heads 'Required Modules' and 'Changes'.
+	- Replace personal doc root with /var/www.
+	- Use namespace::autoclean with Moose.
+	- Bump requirement for Search::InvertedIndex::Simpleto V 1.03.
+
 1.04  Tue Feb 16 14:15:00 2010
 	- Update version number of modules required in Build.PL and Makefile.PL,
 		to hopefully avoid the problem everyone's been getting (even Raduko):

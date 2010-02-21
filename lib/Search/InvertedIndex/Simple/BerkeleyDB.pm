@@ -56,7 +56,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.04';
+our $VERSION = '1.05';
 
 # -----------------------------------------------
 
@@ -393,18 +393,6 @@ C<inflate()> finds the elements of the inflated results which are common to all 
 by using the C<intersection()> method in the class C<Set::Array>, and returns the result
 as an object of type C<Set::Array>, or undef if any search key failed to find anything.
 
-=head1 Required Modules
-
-=over 4
-
-=item BerkeleyDB
-
-=item Search::InvertedIndex::Simple
-
-=item Set::Array
-
-=back
-
 =head1 Example code
 
 See t/test.t for a complete program.
@@ -417,8 +405,7 @@ Home page: http://savage.net.au/index.html
 
 =head1 Copyright
 
-Australian copyright (c) 2005, Ron Savage. All rights reserved.
-
+Australian copyright (c) 2005, Ron Savage.
 	All Programs of mine are 'OSI Certified Open Source Software';
 	you can redistribute them and/or modify them under the terms of
 	The Artistic License, a copy of which is available at:
