@@ -1,11 +1,18 @@
 Revision history for Perl extension Search::InvertedIndex::Simple::BerkeleyDB.
 
+1.06  Fri Mar 23 17:45:00 2012
+	- No code changes.
+	- Recreate distmeta files, so add META.json. This includes updating MANIFEST.SKIP with MYMETA.json.
+	- Check tests after installing Oracle's BerkeleyDB V 5.3.15 and Perl's BerkeleyDB V 0.51.
+
 1.05  Sun Feb 21 12:56:30 2010
 	- Remove text 'All rights reserved' (for Debian licensing).
 	- Remove POD heads 'Required Modules' and 'Changes'.
 	- Replace personal doc root with /var/www.
 	- Use namespace::autoclean with Moose.
 	- Bump requirement for Search::InvertedIndex::Simpleto V 1.03.
+	- Replace /usr/bin/perl with /usr/bin/env perl.
+	- Replace common::sense with use strict and use warnings, to get uninit var warnings.
 
 1.04  Tue Feb 16 14:15:00 2010
 	- Update version number of modules required in Build.PL and Makefile.PL,

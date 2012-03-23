@@ -56,7 +56,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 # -----------------------------------------------
 
@@ -236,7 +236,7 @@ __END__
 
 =head1 NAME
 
-C<Search::InvertedIndex::Simple::BerkeleyDB> - Build indexes for a set of search keys; Search using BerkeleyDB
+Search::InvertedIndex::Simple::BerkeleyDB - Build indexes for a set of search keys; Search using BerkeleyDB
 
 =head1 Synopsis
 
